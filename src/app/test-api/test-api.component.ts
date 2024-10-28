@@ -18,7 +18,16 @@ export class TestApiComponent {
   response: string | null = null;
   constructor(public auth: AuthService, private http: HttpClient) {}
 
-  ngOnInit(): void {
-    this.http.get(encodeURI(environment.ApiEndpoints[0])).subscribe();
+  ngOnInit(): void {}
+
+  callApi(): void {
+    this.http
+      .get(encodeURI('http://localhost:8000/test_auth'), {
+        responseType: 'text',
+      })
+      .subscribe((data) => {
+        console.log(data);
+        this.response = data.toString();
+      });
   }
 }
