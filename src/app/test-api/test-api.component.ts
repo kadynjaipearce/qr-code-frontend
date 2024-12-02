@@ -22,7 +22,7 @@ export class TestApiComponent {
 
   callApi(): void {
     this.http
-      .get(encodeURI('http://localhost:8000/test_auth'), {
+      .get(encodeURI('http://localhost:8010/test_auth'), {
         responseType: 'text',
       })
       .subscribe((data) => {

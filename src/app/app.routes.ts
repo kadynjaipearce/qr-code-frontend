@@ -1,4 +1,4 @@
-import { mapToCanActivate, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 
 import { AuthGuard, AuthService } from '@auth0/auth0-angular';
 

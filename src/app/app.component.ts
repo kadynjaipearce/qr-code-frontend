@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { NavigationComponent } from './navigation/navigation.component';
+
 import { AuthButtonComponent } from './auth-button/auth-button.component';
 import { TestApiComponent } from './test-api/test-api.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 @Component({
   selector: 'app-root',
@@ -17,5 +18,5 @@ import { TestApiComponent } from './test-api/test-api.component';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = 'Skibidi';
+  title = 'Track My Qr';
 }
