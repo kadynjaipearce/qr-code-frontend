@@ -1,29 +1,35 @@
 import { Component } from '@angular/core';
+import { AuthButtonComponent } from '../auth-button/auth-button.component';
+import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { Menubar } from 'primeng/menubar';
+
+interface NavItem {
+  label: string;
+  icon: string;
+  routerLink: string;
+}
 
 @Component({
   selector: 'app-navigation',
   standalone: true,
-  imports: [Menubar, RouterLink],
+  imports: [AuthButtonComponent, CommonModule, RouterLink],
   templateUrl: './navigation.component.html',
   styleUrl: './navigation.component.css',
 })
 export class NavigationComponent {
-  items = [
+  isMenuCollapsed = true;
+
+  navItems: NavItem[] = [
     {
-      icon: 'pi pi-home',
       label: 'Home',
+      icon: 'fas fa-toolbox',
+      routerLink: '/',
     },
-    {
-      icon: 'pi pi-tag',
-      label: 'Pricing',
-      items: [
-        {
-          icon: 'pi pi-home',
-          label: 'Home',
-        },
-      ],
-    },
+    { label: 'Why us?', icon: 'far fa-question-circle', routerLink: '/' },
+    { label: 'Pricing', icon: 'fas fa-tags', routerLink: '/' },
   ];
+
+  toggleMenu() {
+    this.isMenuCollapsed = !this.isMenuCollapsed;
+  }
 }

@@ -16,18 +16,31 @@ interface Response {
 })
 export class TestApiComponent {
   response: string | null = null;
+
+  dynamicUrls: string | null = null;
   constructor(public auth: AuthService, private http: HttpClient) {}
 
   ngOnInit(): void {}
 
   callApi(): void {
     this.http
-      .get(encodeURI('http://localhost:8010/test_auth'), {
+      .get(encodeURI('http://localhost:8000/test_auth'), {
         responseType: 'text',
       })
       .subscribe((data) => {
         console.log(data);
         this.response = data.toString();
+      });
+  }
+
+  callUserUrls(): void {
+    this.http
+      .get(encodeURI('http://localhost:8000/list_users_dynamic_qrcodes'), {
+        responseType: 'json',
+      })
+      .subscribe((data) => {
+        console.log(data);
+        this.dynamicUrls = data.toString();
       });
   }
 }

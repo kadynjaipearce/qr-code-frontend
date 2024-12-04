@@ -1,12 +1,14 @@
-@import "primeicons/primeicons.css";
+@import "@fortawesome/fontawesome-free/css/all.css";
 
-@layer tailwind-base, primeng, tailwind-utilities;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@layer tailwind-base {
-  @tailwind base;
+html,
+body {
+  height: 100%;
 }
-
-@layer tailwind-utilities {
-  @tailwind components;
-  @tailwind utilities;
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }

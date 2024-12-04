@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 
 import { AuthGuard, AuthService } from '@auth0/auth0-angular';
 
-import { UserProfileComponent } from './user-profile/user-profile.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
 import { map } from 'rxjs';
 
@@ -20,7 +20,7 @@ export const routes: Routes = [
   },
   {
     path: 'dashboard',
-    component: UserProfileComponent,
+    component: DashboardComponent,
     canActivate: [AuthGuard],
   },
 ];
